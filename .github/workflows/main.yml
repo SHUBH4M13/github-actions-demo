@@ -18,3 +18,9 @@ jobs:
 
       - name: Display HTML content
         run: cat hello.html
+
+      - name: Build Docker image
+      run: docker build -t hello-app .
+
+      - name: Run container
+      run: docker run -d -p 8080:80 hello-app
